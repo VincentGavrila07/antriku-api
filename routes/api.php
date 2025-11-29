@@ -2,12 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\LocalizationController;
 
 // Route::get('/management/data', function () {
 //     return response()->json(['message' => 'Admin atau Staff boleh masuk']);
 // })->middleware(['auth:sanctum', 'role:admin|staff']);
 
-
+Route::get('/translations', [LocalizationController::class, 'getTranslations']);
 Route::post('/login', [UserController::class, 'login']);
 Route::post('/register',[UserController::class,'register']);
 
