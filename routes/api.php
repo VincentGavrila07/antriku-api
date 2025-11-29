@@ -14,9 +14,14 @@ Route::post('/register',[UserController::class,'register']);
 
 Route::post('/logout', [UserController::class, 'logout'])->middleware('auth:sanctum');
 Route::get('/me', [UserController::class, 'me'])->middleware('auth:sanctum');
-Route::get('/admin', function () {
-    return response()->json(['message' => 'Halo Admin']);
-})->middleware(['auth:sanctum', 'role:admin']);
+Route::get('/me/permissions', [UserController::class, 'getPermissions'])->middleware('auth:sanctum');
+
+
+
+Route::middleware(['auth:sanctum', 'role:admin'])->prefix('admin')->group(function () {
+    Route::get('/get-all-user', [UserController::class, 'getAllUser'])->name('getAllUser');
+});
+
 
 Route::get('/staff', function () {
     return response()->json(['message' => 'Halo Staff']);

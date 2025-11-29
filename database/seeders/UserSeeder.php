@@ -25,19 +25,19 @@ class UserSeeder extends Seeder
                 'name' => 'customer',
                 'email' => 'customer@gmail.com',
                 'password' => Hash::make('password123'),
-                'roleID' => $customer
+                'roleId' => $customer
             ],
             [
                 'name' => 'superadmin',
                 'email' => 'superadmin@gmail.com',
                 'password' => Hash::make('password123'),
-                'roleID' => $admin
+                'roleId' => $admin
             ],
             [
                 'name' => 'staff',
                 'email' => 'staff@gmail.com',
                 'password' => Hash::make('password123'),
-                'roleID' => $staff
+                'roleId' => $staff
             ],
         ]);
     }

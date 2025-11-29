@@ -20,10 +20,10 @@ class RoleMiddleware
             ], 401);
         }
 
-        // cek role user
-        if ($request->user()->role !== $role) {
+         $userRole = $request->user()->role?->name; 
+        if (!$userRole) {
             return response()->json([
-                'message' => 'Forbidden: Role tidak sesuai'
+                'message' => 'Forbidden: Role tidak ditemukan'
             ], 403);
         }
 

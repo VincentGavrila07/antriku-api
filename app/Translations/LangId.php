@@ -9,6 +9,8 @@ class LangId {
                 "appName" => "Antriku",
                 "adminDashboard" => "Dashboard Admin",
                 "userManagement" => "Manajemen Pengguna",
+                "user" => "Pengguna",
+                "role" => "Peran",
                 "reports" => "Laporan",
                 "staffDashboard" => "Dashboard Staff",
                 "orders" => "Pesanan",

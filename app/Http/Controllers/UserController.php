@@ -52,7 +52,7 @@ class UserController extends Controller
     public function register(Request $request)
     {
         try {
-            // Validasi
+
             $request->validate([
                 'name' => ['required', 'string', 'max:255'],
                 'email' => ['required', 'email', 'unique:msuser,email'],
@@ -60,7 +60,7 @@ class UserController extends Controller
                 'roleId' => ['required', 'integer'],
             ]);
 
-            // Insert user
+
             $user = MsUser::create([
                 'name' => $request->name,
                 'email' => $request->email,
@@ -68,7 +68,7 @@ class UserController extends Controller
                 'roleId' => $request->roleId,
             ]);
 
-            // Token Sanctum
+
             $token = $user->createToken("api-token")->plainTextToken;
 
             return response()->json([
@@ -88,18 +88,17 @@ class UserController extends Controller
 
             return response()->json([
                 'message' => 'Terjadi kesalahan server',
-                'error'   => $e->getMessage(),  // REAL ERROR
+                'error'   => $e->getMessage(),  
             ], 500);
         }
     }
 
     public function logout(Request $request)
     {
-        // Ambil user yang sedang login
         $user = $request->user();
 
         if ($user) {
-            // Hapus token yang sedang dipakai
+            
             $user->currentAccessToken()->delete();
 
             return response()->json([
@@ -112,6 +111,53 @@ class UserController extends Controller
         ], 404);
     }
 
+    public function getPermissions(Request $request)
+    {
+        $user = $request->user();
+
+        if (!$user) {
+            return response()->json(['message' => 'Unauthenticated'], 401);
+        }
+
+        $role = $user->role;
+        $permissions = $role ? $role->permissions()->pluck('slug') : [];
+
+        return response()->json([
+            'role' => $role?->name,
+            'permissions' => $permissions
+        ]);
+    }
+
+    public function getAllUser(Request $request)
+    {
+        $page = $request->query('page', 1);
+        $limit = $request->query('limit', 10);
+
+        $query = MsUser::with('role');
+
+        $filters = $request->query('filters', []); // ambil array filters
+
+        if (!empty($filters['name'])) {
+            $query->where('name', 'like', '%' . $filters['name'] . '%');
+        }
+
+        $paginated = $query->paginate($limit, ['*'], 'page', $page);
+
+        // Tambahkan roleName langsung
+        $paginated->getCollection()->transform(function ($user) {
+            return [
+                'id' => $user->id,
+                'name' => $user->name,
+                'email' => $user->email,
+                'roleId' => $user->roleId,
+                'roleName' => $user->role?->name,
+                'created_at' => $user->created_at,
+                'updated_at' => $user->updated_at,
+            ];
+        });
+
+        return response()->json($paginated);
+    }
 
 
 

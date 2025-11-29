@@ -6,9 +6,11 @@ class LangEn {
     public static function get() {
         return [
             "Sidebar" => [
-                "appName" => "Queue Master",
+                "appName" => "Antriku",
                 "adminDashboard" => "Admin Dashboard",
                 "userManagement" => "User Management",
+                "user" => "User",
+                "role" => "Role",
                 "reports" => "Reports",
                 "staffDashboard" => "Staff Dashboard",
                 "orders" => "Orders",

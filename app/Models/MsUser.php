@@ -30,6 +30,6 @@ class MsUser extends Authenticatable
 
     public function role()
     {
-        return $this->belongsTo(MsRole::class, 'roleID');
+        return $this->belongsTo(MsRole::class, 'roleId');
     }
 }
