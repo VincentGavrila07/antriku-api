@@ -20,6 +20,7 @@ Route::get('/me/permissions', [UserController::class, 'getPermissions'])->middle
 
 Route::middleware(['auth:sanctum', 'role:admin'])->prefix('admin')->group(function () {
     Route::get('/get-all-user', [UserController::class, 'getAllUser'])->name('getAllUser');
+    Route::get('/user-detail/{id}',[userController::class,'getUserById'])->name('getUserById');
     Route::delete('/delete-user/{id}', [UserController::class, 'deleteUser'])->name('deleteUser');
 
 });

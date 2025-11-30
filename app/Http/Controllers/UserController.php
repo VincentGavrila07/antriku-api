@@ -159,7 +159,7 @@ class UserController extends Controller
         return response()->json($paginated);
     }
 
-    public function getUserById($id, Request $request)
+    public function getUserById($id)
     {
         $user = MsUser::with('role')->find($id);
 
