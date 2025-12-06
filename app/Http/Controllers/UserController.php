@@ -206,19 +206,13 @@ class UserController extends Controller
         try {
             $request->validate([
                 'name' => 'required|string|max:255',
-                'email' => 'required|email|unique:msuser,email,' . $id,
                 'roleId' => 'required|integer',
             ]);
 
             $user = MsUser::findOrFail($id);
 
             $user->name = $request->name;
-            $user->email = $request->email;
             $user->roleId = $request->roleId;
-
-            if ($request->has('password')) {
-                $user->password = bcrypt($request->password);
-            }
 
             $user->save();
 
@@ -234,6 +228,7 @@ class UserController extends Controller
             ], 500);
         }
     }
+
 
     public function storeUser(Request $request)
     {
