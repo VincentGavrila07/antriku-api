@@ -25,9 +25,13 @@ Route::middleware(['auth:sanctum', 'role:admin'])->prefix('admin')->group(functi
     Route::get('/user-detail/{id}',[userController::class,'getUserById'])->name('getUserById');
     Route::delete('/delete-user/{id}', [UserController::class, 'deleteUser'])->name('deleteUser');
     Route::put('/update-user/{id}',[UserController::class,'updateUser'])->name('updateUser');
-
+    
     //role punya
     Route::get('/get-all-role',[RoleController::class,'getAllRole'])->name('getAllRole');
+    Route::get('/role-detail/{id}',[RoleController::class,'getRoleById'])->name('getRoleById');
+    Route::post('/store-role',[RoleController::class,'storeRole'])->name('storeRole');
+    Route::delete('/delete-role/{id}', [RoleController::class, 'deleteRole'])->name('deleteRole');
+    Route::put('/update-role/{id}',[RoleController::class,'updateRole'])->name('updateRole');
 });
 
 
