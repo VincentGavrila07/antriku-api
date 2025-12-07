@@ -281,16 +281,14 @@ class UserController extends Controller
             // Baru lanjut validasi setelah yakin user ada
             $request->validate([
                 'name' => 'required|string|max:255',
-                'email' => 'required|email|unique:msuser,email,' . $user->id,
                 'password' => 'nullable|string|min:6',
                 'currentPassword' => 'nullable|required_with:password|string',
             ]);
 
             $user->name = $request->name;
-            $user->email = $request->email;
 
             // Logic Ganti Password Aman
-            if ($request->filled('password')) {
+            if ($request->filled('currentPassword')) {
                 // 1. Cek Password Lama
                 if (!Hash::check($request->currentPassword, $user->password)) {
                     return response()->json([
@@ -298,7 +296,7 @@ class UserController extends Controller
                     ], 400);
                 }
                 // 2. Set Password Baru
-                $user->password = bcrypt($request->password);
+                $user->password = bcrypt($request->newPassword);
             }
 
             $user->save();
