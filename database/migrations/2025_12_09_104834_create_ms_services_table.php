@@ -21,6 +21,7 @@ return new class extends Migration
             $table->json('assigned_user_ids')->nullable();
 
             $table->boolean('is_active')->default(true);
+            $table->time('estimated_time')->nullable();
             $table->timestamps();
         });
     }
