@@ -5,7 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\LocalizationController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\PermissionController;
-
+use App\Http\Controllers\ServiceController;
 // Route::get('/management/data', function () {
 //     return response()->json(['message' => 'Admin atau Staff boleh masuk']);
 // })->middleware(['auth:sanctum', 'role:admin|staff']);
@@ -36,13 +36,20 @@ Route::middleware(['auth:sanctum', 'role:admin'])->prefix('admin')->group(functi
     Route::post('/store-role',[RoleController::class,'storeRole'])->name('storeRole');
     Route::delete('/delete-role/{id}', [RoleController::class, 'deleteRole'])->name('deleteRole');
     Route::put('/update-role/{id}',[RoleController::class,'updateRole'])->name('updateRole');
-
+    
     //permission punya
     Route::get('get-all-permissions', [PermissionController::class, 'getAllPermissions']);
     Route::get('permissions/{id}', [PermissionController::class, 'getPermissionById']);
     Route::get('permissions/{id}/roles', [PermissionController::class, 'getRolesByPermission']);
     Route::put('permissions/{id}/roles', [PermissionController::class, 'updateRoles']);
-
+    
+    //service punya
+    Route::get('/get-all-services',[ServiceController::class,'getAllServices'])->name('getAllServices');
+    Route::get('/services-detail/{id}', [ServiceController::class, 'getServiceById']);
+    Route::put('/update-services/{id}', [ServiceController::class, 'updateService']);
+    Route::post('/store-service', [ServiceController::class, 'storeService']);
+    Route::delete('/delete-services/{id}', [ServiceController::class, 'deleteService']);
+    
 });
 
 

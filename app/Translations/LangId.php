@@ -13,6 +13,7 @@ class LangId {
                 "role" => "Peran",
                 "perizinan" => "Perizinan",
                 "reports" => "Laporan",
+                "service" => "Layanan",
                 "staffDashboard" => "Dashboard Staff",
                 "orders" => "Pesanan",
                 "myDashboard" => "Dashboard Saya",

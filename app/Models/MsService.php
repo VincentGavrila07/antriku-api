@@ -15,13 +15,15 @@ class MsService extends Model
         'name',
         'description',
         'assigned_user_ids',
+        'estimated_time',
         'is_active'
     ];
 
     // INI KUNCINYA: Casting JSON ke Array
     protected $casts = [
         'assigned_user_ids' => 'array',
-        'is_active' => 'boolean'
+        'is_active' => 'boolean',
+        'estimated_time' => 'string',
     ];
 
     // Relasi ke Transaksi

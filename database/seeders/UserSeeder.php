@@ -28,14 +28,32 @@ class UserSeeder extends Seeder
                 'roleId' => $customer
             ],
             [
+                'name' => 'Vincent',
+                'email' => 'vincent@gmail.com',
+                'password' => Hash::make('password123'),
+                'roleId' => $customer
+            ],
+            [
+                'name' => 'Farhan',
+                'email' => 'farhan@gmail.com',
+                'password' => Hash::make('password123'),
+                'roleId' => $customer
+            ],
+            [
                 'name' => 'superadmin',
                 'email' => 'superadmin@gmail.com',
                 'password' => Hash::make('password123'),
                 'roleId' => $admin
             ],
             [
-                'name' => 'staff',
-                'email' => 'staff@gmail.com',
+                'name' => 'Dokter Danish',
+                'email' => 'dokterumum@gmail.com',
+                'password' => Hash::make('password123'),
+                'roleId' => $staff
+            ],
+            [
+                'name' => 'Dokter Angel',
+                'email' => 'doktergigi@gmail.com',
                 'password' => Hash::make('password123'),
                 'roleId' => $staff
             ],

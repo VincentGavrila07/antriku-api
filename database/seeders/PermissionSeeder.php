@@ -18,6 +18,7 @@ class PermissionSeeder extends Seeder
             ['name' => 'View User Management', 'slug' => 'view-user-management'],
             ['name' => 'View Role Management', 'slug' => 'view-role-management'],
             ['name' => 'View Permission Management', 'slug' => 'view-permission-management'],
+            ['name' => 'View Service Management', 'slug' => 'view-Service-management'],
             ['name' => 'Add User', 'slug' => 'add-user'],
             ['name' => 'Edit User', 'slug' => 'edit-user'],
             ['name' => 'Add Role', 'slug' => 'add-role'],

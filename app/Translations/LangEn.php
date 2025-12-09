@@ -13,6 +13,7 @@ class LangEn {
                 "role" => "Role",
                 "permission" => "Permission",
                 "reports" => "Reports",
+                "service" => "Service",
                 "staffDashboard" => "Staff Dashboard",
                 "orders" => "Orders",
                 "myDashboard" => "My Dashboard",
