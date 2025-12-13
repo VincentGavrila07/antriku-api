@@ -19,6 +19,7 @@ Route::get('/me/permissions', [UserController::class, 'getPermissions'])->middle
 Route::get('/get-all-services',[ServiceController::class,'getAllServices'])->name('getAllServices');
 Route::get('/services/{id}/staff', [ServiceController::class, 'getServiceStaff'])->name('getServiceStaff');
 Route::post('/book-service',[ServiceController::class,'createQueue'])->name('createQueue');
+Route::get('/queues/active/{userId}', [ServiceController::class, 'getActiveQueue']);
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::put('/profile/update', [UserController::class, 'updateProfile']);

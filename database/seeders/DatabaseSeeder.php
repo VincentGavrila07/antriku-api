@@ -19,8 +19,7 @@ class DatabaseSeeder extends Seeder
             PermissionSeeder::class, // seed permission dulu
             RoleSeeder::class,       // seed role + assign permission
             UserSeeder::class,       // seed user
-            MsServiceSeeder::class,  // seed layanan
-            TrServiceSeeder::class,  // seed layanan yang diambil customer
+            MsServiceSeeder::class,  // seed layanan  // seed layanan yang diambil customer
         ]);
     }
     
