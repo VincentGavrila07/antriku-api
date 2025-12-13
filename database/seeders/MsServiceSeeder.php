@@ -15,6 +15,7 @@ class MsServiceSeeder extends Seeder
                 'name' => 'Poli Umum',
                 'description' => 'Pemeriksaan kesehatan umum.',
                 // Assign Vincent (ID 2) disini
+                'code' => 'PU',
                 'assigned_user_ids' => json_encode([5]),
                 'estimated_time' => '00:30:00',
                 'is_active' => true,
@@ -24,6 +25,7 @@ class MsServiceSeeder extends Seeder
             [
                 'name' => 'Poli Gigi',
                 'description' => 'Kesehatan gigi.',
+                'code' => 'PG',
                 // Vincent (ID 2) juga bantu disini
                 'assigned_user_ids' => json_encode([6]),
                 'estimated_time' => '00:30:00',

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name'); // Contoh: "Poli Gigi", "Poli Anak"
             $table->text('description')->nullable();
+            $table->string('code');
 
             // Kolom JSON ini berisi Array ID dari user dengan Role ID 3 (Staff)
             // Contoh: [3, 4, 5] -> Artinya Staff ID 3, 4, dan 5 bertugas di poli ini

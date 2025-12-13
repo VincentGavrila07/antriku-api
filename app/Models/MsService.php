@@ -15,6 +15,7 @@ class MsService extends Model
         'name',
         'description',
         'assigned_user_ids',
+        'code',
         'estimated_time',
         'is_active'
     ];
@@ -31,4 +32,15 @@ class MsService extends Model
     {
         return $this->hasMany(TrService::class, 'service_id');
     }
+
+    public function assignedUsers()
+    {
+        return $this->belongsToMany(
+            MsUser::class,
+            'ms_users',          // tabel user
+            'id',                // primary key user
+            'id'                 // ini akan kita filter manual nanti
+        )->whereIn('id', $this->assigned_user_ids ?? []);
+    }
+
 }

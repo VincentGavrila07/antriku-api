@@ -13,10 +13,12 @@ use App\Http\Controllers\ServiceController;
 Route::get('/translations', [LocalizationController::class, 'getTranslations']);
 Route::post('/login', [UserController::class, 'login']);
 Route::post('/register',[UserController::class,'register']);
-
 Route::post('/logout', [UserController::class, 'logout'])->middleware('auth:sanctum');
 Route::get('/me', [UserController::class, 'me'])->middleware('auth:sanctum');
 Route::get('/me/permissions', [UserController::class, 'getPermissions'])->middleware('auth:sanctum');
+Route::get('/get-all-services',[ServiceController::class,'getAllServices'])->name('getAllServices');
+Route::get('/services/{id}/staff', [ServiceController::class, 'getServiceStaff'])->name('getServiceStaff');
+Route::post('/book-service',[ServiceController::class,'createQueue'])->name('createQueue');
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::put('/profile/update', [UserController::class, 'updateProfile']);
