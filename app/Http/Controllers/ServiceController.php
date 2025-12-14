@@ -15,17 +15,17 @@ class ServiceController extends Controller
 {
     public function getAllServices(Request $request)
     {
-        $page = $request->query('page', 1);
-        $limit = $request->query('pageSize', 10);  
+        $page  = $request->query('page', 1);
+        $limit = $request->query('pageSize', 10);
 
         $query = MsService::query();
 
-        $filters = $request->query('filters', []); 
+        $filters = $request->query('filters', []);
         if (!empty($filters['name'])) {
             $query->where('name', 'like', '%' . $filters['name'] . '%');
         }
 
-        $paginated = $query->paginate($limit, ['*'], 'page', $page);  
+        $paginated = $query->paginate($limit, ['*'], 'page', $page);
 
         $paginated->getCollection()->transform(function ($service) {
             return [
@@ -33,6 +33,10 @@ class ServiceController extends Controller
                 'name' => $service->name,
                 'code' => $service->code,
                 'description' => $service->description,
+                'estimated_time' => $service->estimated_time,
+                'is_active' => $service->is_active,
+                'assigned_user_ids' => $service->assigned_user_ids ?? [],
+                'assigned_users' => $service->getAssignedUsers(), // 🔥 INI KUNCINYA
                 'created_at' => $service->created_at,
                 'updated_at' => $service->updated_at,
             ];
@@ -40,7 +44,6 @@ class ServiceController extends Controller
 
         return response()->json($paginated);
     }
-
 
     // Menambahkan service baru
     public function storeService(Request $request)

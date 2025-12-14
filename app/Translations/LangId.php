@@ -20,6 +20,12 @@ class LangId {
                 "profile" => "Profil",
                 "logout" => "Keluar"
             ],
+            'Forbidden' => [
+                'Forbidden' => 'Dilarang',
+                'Sorry' => ' Maaf, Anda tidak memiliki izin untuk mengakses halaman ini.
+                    Jika menurut Anda ini adalah kesalahan, silakan hubungi
+                    administrator.'
+            ],
             "welcome" => [
                 "welcome" => "Selamat Datang"
             ],
@@ -94,7 +100,36 @@ class LangId {
                 'DeleteUserConfirmOk' => 'Hapus',
                 'DeleteUserConfirmCancel' => 'Batal',
                 'SearchByName' => 'Cari nama...'
-            ]
+            ],
+            "profile" => [
+                'EditProfile' => 'Ubah Profile',
+                'changePass' => 'Ganti Password',
+                'name' => 'Nama',
+                'NewPass' => 'Password Baru',
+                'ConfirmPass' => 'Konfirmasi Password Saat Ini',
+                'Save' => 'Simpan'
+            ],
+            'report' => [
+                'GenerateServiceReport' => 'Hasilkan Laporan Layanan',
+                'GenerateReport' => 'Hasilkan Laporan',
+                'Keterangan' => 'Pilih tanggal dan klik tombol Generate PDF akan otomatis terbuka di tab baru.',
+                'OpenManually' => 'Buka Manual PDF'
+            ],
+            'service' => [
+                'page' => [
+                    'ListService' => 'Daftar Layanan',
+                    'AddLayanan' => 'Tambah Layanan',
+                    'EditService' => 'Ubah Service'
+                ],
+                'AddService' => [
+                    'Name' => 'Nama Service',
+                    'ServiceCode' => 'Kode Service',
+                    'Description' => 'Deskripsi',
+                    'AssignStaf' => 'Tugaskan Staff',
+                    'EstimatedTime' => 'Estimasi Waktu',
+                    'Save' => 'Simpan',
+                ],
+            ],
         ];
     }
 }

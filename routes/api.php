@@ -37,6 +37,7 @@ Route::middleware('auth:sanctum')->group(function () {
 
 Route::middleware(['auth:sanctum', 'role:admin'])->prefix('admin')->group(function () {
     Route::get('/get-all-user', [UserController::class, 'getAllUser'])->name('getAllUser');
+    Route::get('/total-by-role', [UserController::class, 'getTotalUserByRole'])->name('getTotalUserByRole');
     Route::post('/store-user',[UserController::class,'storeUser'])->name('storeUser');
     Route::get('/user-detail/{id}',[userController::class,'getUserById'])->name('getUserById');
     Route::delete('/delete-user/{id}', [UserController::class, 'deleteUser'])->name('deleteUser');
@@ -63,6 +64,7 @@ Route::middleware(['auth:sanctum', 'role:admin'])->prefix('admin')->group(functi
     Route::delete('/delete-services/{id}', [ServiceController::class, 'deleteService']);
     Route::post('/service/generate-report', [ServiceController::class, 'generateReport']);
     Route::get('/download-report/{fileName}', [ServiceController::class, 'downloadReport']);
+    
 });
 
 
