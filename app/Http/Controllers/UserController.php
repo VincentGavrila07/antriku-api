@@ -261,7 +261,7 @@ class UserController extends Controller
             ], 500);
         }
     }
-
+    
     public function updateProfile(Request $request)
     {
         try {
@@ -305,6 +305,22 @@ class UserController extends Controller
         } catch (\Exception $e) {
             return response()->json(['message' => 'Error server', 'error' => $e->getMessage()], 500);
         }
+    }
+
+    public function getTotalUserByRole(Request $request)
+    {
+        $request->validate([
+            'roleId' => 'required|integer',
+        ]);
+
+        $roleId = $request->query('roleId');
+
+        $total = MsUser::where('roleId', $roleId)->count();
+
+        return response()->json([
+            'roleId' => $roleId,
+            'total'  => $total,
+        ], 200);
     }
 
 }

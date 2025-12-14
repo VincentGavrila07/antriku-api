@@ -43,4 +43,15 @@ class MsService extends Model
         )->whereIn('id', $this->assigned_user_ids ?? []);
     }
 
+    public function getAssignedUsers()
+    {
+        if (empty($this->assigned_user_ids)) {
+            return collect();
+        }
+
+        return MsUser::whereIn('id', $this->assigned_user_ids)
+            ->select('id', 'name')
+            ->get();
+    }
+
 }
