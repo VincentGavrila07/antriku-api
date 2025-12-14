@@ -11,7 +11,7 @@ class LangId {
                 "userManagement" => "Manajemen Pengguna",
                 "user" => "Pengguna",
                 "role" => "Peran",
-                "perizinan" => "Perizinan",
+                "permission" => "Perizinan",
                 "reports" => "Laporan",
                 "service" => "Layanan",
                 "staffDashboard" => "Dashboard Staff",
@@ -22,6 +22,9 @@ class LangId {
             ],
             "welcome" => [
                 "welcome" => "Selamat Datang"
+            ],
+            "userManagement" => [
+                'ListUser' => 'Daftar Pengguna'
             ]
         ];
     }

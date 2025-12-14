@@ -22,6 +22,9 @@ class LangEn {
             ],
             "welcome" => [
                 "welcome" => "Welcome"
+            ],
+            "userManagement" => [
+                'ListUser' => 'List User'
             ]
         ];
     }
