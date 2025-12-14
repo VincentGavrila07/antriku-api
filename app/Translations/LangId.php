@@ -2,8 +2,10 @@
 
 namespace App\Translations;
 
-class LangId {
-    public static function get() {
+class LangId
+{
+    public static function get()
+    {
         return [
             "Sidebar" => [
                 "appName" => "Antriku",
@@ -23,8 +25,8 @@ class LangId {
             'Forbidden' => [
                 'Forbidden' => 'Dilarang',
                 'Sorry' => ' Maaf, Anda tidak memiliki izin untuk mengakses halaman ini.
-                    Jika menurut Anda ini adalah kesalahan, silakan hubungi
-                    administrator.'
+                            Jika menurut Anda ini adalah kesalahan, silakan hubungi
+                            administrator.'
             ],
             "welcome" => [
                 "welcome" => "Selamat Datang"
@@ -129,6 +131,97 @@ class LangId {
                     'EstimatedTime' => 'Estimasi Waktu',
                     'Save' => 'Simpan',
                 ],
+            ],
+            'order' => [
+                'OrderService' => 'Order Layanan',
+                'SuccessBooking' => 'Booking Berhasil',
+                'QueueNumber' => 'Nomor antrian kamu',
+                'ErrorBooking' => 'Booking Gagal',
+                'ActiveQueueExists' => 'Masih Ada Antrian Yang Aktif',
+                'InvalidUserOrService' => 'User atau Service tidak valid',
+                'PleaseRelogin' => 'Silakan login ulang',
+                'BookingTitle' => 'Pesan',
+                'Book' => 'Pesan',
+                'SelectStaff' => 'Pilih Staff',
+                'SelectStaffRequired' => 'Pilih staff',
+                'ArrivalDate' => 'Tanggal Kedatangan',
+                'ArrivalDateRequired' => 'Pilih tanggal kedatangan',
+            ],
+            'serviceHistory' => [
+                'Service' => 'Layanan',
+                'ServiceHistory' => 'Riwayat Layanan',
+                'ErrorLoadServiceHistory' => 'Gagal Memuat Riwayat Layanan',
+                'ErrorLoadServiceHistoryDesc' => 'Terjadi kesalahan saat mengambil data riwayat layanan',
+                'Status' => 'Status',
+                'Waiting' => 'Menunggu',
+                'Completed' => 'Selesai',
+                'Cancelled' => 'Dibatalkan',
+                'QueueDate' => 'Tanggal Antrian',
+            ],
+            'dashboard' => [
+                'Loading' => 'Memuat...',
+                'AdminDashboard' => 'Dashboard Admin',
+                'Welcome' => 'Selamat Datang,',
+                'Administrator' => 'ADMINISTRATOR',
+                'ServerTime' => 'Waktu Server',
+                'TotalPatients' => 'Total Pasien',
+                'Growth' => 'Pertumbuhan +12%',
+                'TotalStaff' => 'Total Staf',
+                'ActiveDoctors' => '4 Dokter Aktif',
+                'TodayQueues' => 'Antrean Hari Ini',
+                'BusySmooth' => 'Ramai Lancar', // Istilah umum untuk kepadatan yang terkendali
+                'ActiveServices' => 'Layanan Aktif',
+                'ServiceStatusAndQueue' => 'Status Layanan & Antrean',
+                'SearchServiceOrStaff' => 'Cari Layanan atau Staf...',
+                'ServiceName' => 'Nama Layanan',
+                'Status' => 'Status',
+                'Staff' => 'Staf',
+                'Queue' => 'Antrean',
+                'People' => '{count} orang',
+                'Open' => 'Buka',
+                'Break' => 'Istirahat',
+                'Closed' => 'Tutup',
+                'Online' => 'online',
+                'Busy' => 'sibuk',
+                'Offline' => 'offline',
+                'PatientDashboard' => 'Dashboard Pasien',
+                'WelcomeBack' => 'Selamat datang kembali, {name}',
+                'YourActiveQueue' => 'ANTREAN AKTIF ANDA',
+                'QueueNumber' => 'Nomor Antrean',
+                'WaitingProcess' => 'MENUNGGU PROSES',
+                'InProcess' => 'SEDANG DIPROSES',
+                'Service' => 'Layanan',
+                'Estimate' => 'Estimasi',
+                'BeingServed' => 'Sedang Dilayani',
+                'NoActiveQueue' => 'Tidak ada antrean aktif',
+                'ServiceList' => 'DAFTAR LAYANAN',
+                'Information' => 'INFORMASI',
+                'Latest' => 'TERBARU',
+                'RainySeasonHealth' => 'Tetap Sehat di Musim Hujan',
+                'ImmunityTips' => 'Tips menjaga imun tubuh tetap bugar saat musim pancaroba.',
+                'MyProfile' => 'PROFIL SAYA',
+                'RegularPatient' => 'Pasien Reguler',
+                'Verified' => 'TERVERIFIKASI',
+                'Email' => 'Email',
+                'PhoneNumber' => 'Nomor Telepon',
+                'ViewProfileDetail' => 'Lihat Detail Profil',
+                'NoInitialNote' => 'Tidak ada catatan awal',
+                'StaffDashboard' => 'Staf',
+                'CurrentSession' => 'SESI SAAT INI',
+                'InitialComplaint' => 'KELUHAN AWAL / CATATAN:',
+                'FinishQueue' => 'Selesaikan Layanan',
+                'NoPatientInService' => 'Tidak ada pasien yang sedang dilayani',
+                'StartQueue' => 'Mulai Layanan: {name}',
+                'NoQueue' => 'Tidak Ada Antrean',
+                'MyQueue' => 'ANTREAN SAYA ({count})',
+                'Next' => 'BERIKUTNYA',
+                'TotalServingToday' => 'Total Melayani (Hari Ini)',
+                'AllServices' => 'Semua Layanan',
+                'Notes' => 'CATATAN',
+                'BreakNote' => 'Istirahat',
+                'MonthlyMeeting' => 'Rapat Bulanan',
+                'NewNotePlaceholder' => 'Catatan baru...',
+                'CheckIn' => 'Daftar Kedatangan',
             ],
         ];
     }
