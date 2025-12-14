@@ -20,6 +20,15 @@ Route::get('/get-all-services',[ServiceController::class,'getAllServices'])->nam
 Route::get('/services/{id}/staff', [ServiceController::class, 'getServiceStaff'])->name('getServiceStaff');
 Route::post('/book-service',[ServiceController::class,'createQueue'])->name('createQueue');
 Route::get('/queues/active/{userId}', [ServiceController::class, 'getActiveQueue']);
+Route::get('/queues/by-service', [ServiceController::class, 'getAllQueueByService']);
+Route::get('/queues/history/by-service', [ServiceController::class, 'getHistoryByService']);
+
+Route::get('/my-services', [ServiceController::class, 'getMyService']);
+Route::get('/service-history/{roleId}', [ServiceController::class, 'getServiceHistory']);
+Route::get('total-serve', [ServiceController::class, 'getTotalServe']);
+
+Route::put('/queues/update-status', [ServiceController::class, 'updateStatusQueue']);
+
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::put('/profile/update', [UserController::class, 'updateProfile']);
