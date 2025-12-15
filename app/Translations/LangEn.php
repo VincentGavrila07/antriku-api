@@ -2,6 +2,8 @@
 
 namespace App\Translations;
 
+use Symfony\Component\HttpKernel\Profiler\Profile;
+
 class LangEn {
     public static function get() {
         return [
@@ -114,21 +116,6 @@ class LangEn {
                 'Keterangan' => 'Select a date and click the Generate PDF button; the PDF will automatically open in a new tab.',
                 'OpenManually' => 'Open PDF Manually'
             ],
-            'service' => [
-                'page' => [
-                    'ListService' => 'Service List',
-                    'AddLayanan' => 'Add Service',
-                    'EditServie' => 'Edit Service'
-                ],
-                'AddService' => [
-                    'Name' => 'Service Name',
-                    'ServiceCode' => 'Service Code',
-                    'Description' => 'Description',
-                    'AssignStaf' => 'Assign Staff',
-                    'EstimatedTime' => 'Estimated Time',
-                    'Save' => 'Save',
-                ],
-            ],
             'order' => [
                 'OrderService' => 'Order Service',
                 'SuccessBooking' => 'Booking Successful',
@@ -219,6 +206,77 @@ class LangEn {
                 'MonthlyMeeting' => 'Monthly Meeting',
                 'NewNotePlaceholder' => 'New note...',
                 'CheckIn' => 'Check In',
+            ],
+            'service' => [
+                'Services' => 'Services',
+                'AddService' => 'Add Service',
+                'EditService' => 'Edit Service',
+                'ServiceName' => 'Service Name',
+                'ServiceNameRequired' => 'Service name is required.',
+                'ServiceNamePlaceholder' => 'Enter service name',
+                'ServiceCode' => 'Service Code',
+                'ServiceCodeRequired' => 'Service code is required.',
+                'ServiceCodePlaceholder' => 'Enter service code',
+                'Description' => 'Description',
+                'DescriptionPlaceholder' => 'Enter service description',
+                'AssignStaff' => 'Assign Staff',
+                'AssignStaffPlaceholder' => 'Select staff to assign',
+                'AssignStaffEditPlaceholder' => 'Select staff',
+                'EstimatedTime' => 'Estimated Time',
+                'IsActive' => 'Active?',
+                'Save' => 'Save',
+                'SuccessAddService' => 'Service added successfully.',
+                'SuccessEditService' => 'Service updated successfully.',
+                'ErrorAddService' => 'Failed to add service.',
+                'ErrorEditService' => 'Failed to update service.',
+                'ErrorLoadUser' => 'Failed to load user data.',
+                'ErrorLoadService' => 'Failed to load service data.',
+                'ErrorLoadServiceTitle' => 'Failed to Load Service Data',
+                'ErrorLoadServiceDesc' => 'An error occurred while loading service data.',
+                'SuccessDeleteService' => 'Service deleted successfully.',
+                'ErrorDeleteServiceTitle' => 'Failed to Delete Service',
+                'ErrorDeleteServiceDesc' => 'An error occurred while deleting the service.',
+                'DeleteServiceConfirmTitle' => 'Delete Service?',
+                'DeleteServiceConfirmText' => 'Are you sure you want to delete this service?',
+                'DeleteServiceConfirmOk' => 'Delete',
+                'DeleteServiceConfirmCancel' => 'Cancel',
+                'ListService' => 'Service List',
+                'SearchByNameService' => 'Search by name...',
+                'AddServiceButton' => 'Add Service',
+            ],
+            'profile' => [
+                'EditProfile' => 'Edit Profile',
+                'Name' => 'Name',
+                'NameRequired' => 'Name is required.',
+                'NamePlaceholder' => 'Enter your name',
+                'ChangePassword' => 'Change Password (Optional)',
+                'NewPassword' => 'New Password',
+                'NewPasswordMin' => 'Minimum 6 characters',
+                'NewPasswordPlaceholder' => 'Leave blank if not changing',
+                'ConfirmCurrentPassword' => 'Confirm Current Password',
+                'ConfirmCurrentPasswordRequired' => 'Enter your current password to confirm!',
+                'ConfirmCurrentPasswordPlaceholder' => 'Enter your current password',
+                'Save' => 'Save',
+                'SuccessEditProfile' => 'Profile updated successfully.',
+                'ErrorEditProfile' => 'Failed to update profile',
+                'ErrorEditProfileDesc' => 'An error occurred while updating the profile.',
+                'MyProfile' => 'My Profile',
+            ],
+            'reports' => [
+                'GenerateServiceReport' => 'Generate Service Report',
+                'SelectDatePlaceholder' => 'Select report date',
+                'GenerateReport' => 'Generate Report',
+                'WarningTitle' => 'Warning',
+                'WarningDesc' => 'Please select a date first!',
+                'SuccessTitle' => 'Success',
+                'SuccessDesc' => 'Report generated successfully. Opening file...',
+                'ErrorTitle' => 'Failed',
+                'ErrorDesc' => 'Failed to generate report. Make sure the server is running.',
+                'OpenManually' => 'Open PDF Manually',
+                'HelperText' => 'Select a date and click Generate. The PDF will automatically open in a new tab.',
+            ],
+            'tables' => [
+
             ],
         ];
     }
