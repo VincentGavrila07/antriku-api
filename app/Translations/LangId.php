@@ -300,9 +300,65 @@ class LangId
                 'OpenManually' => 'Buka PDF Manual',
                 'HelperText' => 'Pilih tanggal dan klik tombol Generate. PDF akan otomatis terbuka di tab baru.',
             ],
-            'tables' => [
+            'berita' => [
+                // General
+                'ListBerita' => 'Daftar Berita',
+                'AddBerita' => 'Tambah Berita',
+                'EditBerita' => 'Edit Berita',
+                'Berita' => 'Berita',
 
+                // Field
+                'Title' => 'Judul',
+                'Description' => 'Deskripsi',
+                'Image' => 'Gambar',
+                'PublishedAt' => 'Tanggal Publikasi',
+
+                // Placeholder
+                'TitlePlaceholder' => 'Masukkan judul berita',
+                'DescriptionPlaceholder' => 'Masukkan deskripsi singkat berita',
+
+                // Validation
+                'TitleRequired' => 'Judul wajib diisi',
+                'DescriptionRequired' => 'Deskripsi wajib diisi',
+                'ImageRequired' => 'Foto wajib diisi',
+
+                // Success
+                'SuccessAddBerita' => 'Berita berhasil ditambahkan',
+                'SuccessEditBerita' => 'Berita berhasil diperbarui',
+                'SuccessDeleteBerita' => 'Berita berhasil dihapus',
+
+                // Error
+                'ErrorAddBerita' => 'Gagal menambahkan berita',
+                'ErrorEditBerita' => 'Gagal memperbarui berita',
+                'ErrorDeleteBerita' => 'Gagal menghapus berita',
+                'ErrorLoadBerita' => 'Gagal memuat data berita',
+                'ErrorLoadBeritaDesc' => 'Terjadi kesalahan saat mengambil data berita',
+
+                // Delete confirmation
+                'DeleteBeritaConfirmTitle' => 'Hapus Berita?',
+                'DeleteBeritaConfirmText' => 'Apakah Anda yakin ingin menghapus berita ini?',
+                'DeleteBeritaConfirmOk' => 'Hapus',
+                'DeleteBeritaConfirmCancel' => 'Batal',
+
+                // Table
+                'NoData' => 'Belum ada berita',
+                   // Field
+                'Title' => 'Judul',
+                'Description' => 'Deskirpsi',
+                'Image' => 'Foto',
+                'PublishedAt' => 'Tanggal Unggah',
+
+                // Placeholder
+                'TitlePlaceholder' => 'Masukkan judul',
+                'DescriptionPlaceholder' => 'Masukkan desrkirpsi singkat berita',
+                'ImagePlaceholder' => 'Unggah Foto',
+
+                // Validation
+                'TitleRequired' => 'Judul wajib diisi.',
+                'DescriptionRequired' => 'Deskripsi wajib diisi.',
+                'save' => 'simpan'
             ],
+
         ];
     }
 }

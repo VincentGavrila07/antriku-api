@@ -290,7 +290,65 @@ class LangEn
                 'OpenManually' => 'Open PDF Manually',
                 'HelperText' => 'Select a date and click Generate. The PDF will automatically open in a new tab.',
             ],
-            'tables' => [],
+            'berita' => [
+                // General
+                'ListBerita' => 'News List',
+                'AddBerita' => 'Add News',
+                'EditBerita' => 'Edit News',
+                'Berita' => 'News',
+
+                // Field
+                'Title' => 'Title',
+                'Description' => 'Description',
+                'Image' => 'Image',
+                'PublishedAt' => 'Published Date',
+
+                // Placeholder
+                'TitlePlaceholder' => 'Enter news title',
+                'DescriptionPlaceholder' => 'Enter short news description',
+
+                // Validation
+                'TitleRequired' => 'Title is required',
+                'DescriptionRequired' => 'Description is required',
+                'ImageRequired' => 'Image is required',
+
+                // Success
+                'SuccessAddBerita' => 'News added successfully',
+                'SuccessEditBerita' => 'News updated successfully',
+                'SuccessDeleteBerita' => 'News deleted successfully',
+
+                // Error
+                'ErrorAddBerita' => 'Failed to add news',
+                'ErrorEditBerita' => 'Failed to update news',
+                'ErrorDeleteBerita' => 'Failed to delete news',
+                'ErrorLoadBerita' => 'Failed to load news data',
+                'ErrorLoadBeritaDesc' => 'An error occurred while fetching news data',
+
+                // Delete confirmation
+                'DeleteBeritaConfirmTitle' => 'Delete News?',
+                'DeleteBeritaConfirmText' => 'Are you sure you want to delete this news?',
+                'DeleteBeritaConfirmOk' => 'Delete',
+                'DeleteBeritaConfirmCancel' => 'Cancel',
+
+                // Table
+                'NoData' => 'No news available',
+
+                    // Field
+                'Title' => 'Title',
+                'Description' => 'Description',
+                'Image' => 'Image',
+                'PublishedAt' => 'Published Date',
+
+                // Placeholder
+                'TitlePlaceholder' => 'Enter news title',
+                'DescriptionPlaceholder' => 'Enter short news description',
+                'ImagePlaceholder' => 'Upload Image',
+                // Validation
+                'TitleRequired' => 'Title is required',
+                'DescriptionRequired' => 'Description is required',
+
+                'save' => 'Save'
+            ],
         ];
     }
 }

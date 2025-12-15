@@ -75,6 +75,7 @@ Route::middleware(['auth:sanctum', 'role:admin'])->prefix('admin')->group(functi
     // Berita Punya
     Route::get('/get-all-berita', [BeritaController::class, 'getAllBerita'])
     ->name('getAllBerita');
+    Route::get('/berita/{id}', [BeritaController::class, 'getDetailBerita']);
 
     Route::post('/store-berita', [BeritaController::class, 'storeBerita'])
         ->name('storeBerita');

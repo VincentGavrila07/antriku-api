@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Berita;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class BeritaController extends Controller
 {
@@ -30,16 +31,20 @@ class BeritaController extends Controller
         try {
             $request->validate([
                 'judul' => 'required|string|max:255',
-                'deskripsi' => 'required|string|max:255',
-                'foto' => 'nullable|string',
+                'deskripsi' => 'required|string',
+                'foto' => 'required|image|mimes:jpg,jpeg,png|max:2048',
                 'published_at' => 'nullable|date',
             ]);
 
             $berita = new Berita();
             $berita->judul = $request->judul;
             $berita->deskripsi = $request->deskripsi;
-            $berita->foto = $request->foto;
             $berita->published_at = $request->published_at;
+
+            if ($request->hasFile('foto')) {
+                $path = $request->file('foto')->store('berita', 'public');
+                $berita->foto = asset('storage/' . $path);
+            }
 
             $berita->save();
 
@@ -56,13 +61,15 @@ class BeritaController extends Controller
         }
     }
 
+
+
     public function updateBerita(Request $request, $id)
     {
         try {
             $request->validate([
                 'judul' => 'required|string|max:255',
-                'deskripsi' => 'required|string|max:255',
-                'foto' => 'nullable|string',
+                'deskripsi' => 'required|string',
+                'foto' => 'required|image|mimes:jpg,jpeg,png|max:2048',
                 'published_at' => 'nullable|date',
             ]);
 
@@ -70,8 +77,17 @@ class BeritaController extends Controller
 
             $berita->judul = $request->judul;
             $berita->deskripsi = $request->deskripsi;
-            $berita->foto = $request->foto;
             $berita->published_at = $request->published_at;
+
+            if ($request->hasFile('foto')) {
+                if ($berita->foto) {
+                    $oldPath = str_replace(asset('storage') . '/', '', $berita->foto);
+                    Storage::disk('public')->delete($oldPath);
+                }
+
+                $path = $request->file('foto')->store('berita', 'public');
+                $berita->foto = asset('storage/' . $path);
+            }
 
             $berita->save();
 
@@ -87,6 +103,7 @@ class BeritaController extends Controller
             ], 500);
         }
     }
+
 
     public function deleteBerita($id)
     {
@@ -105,4 +122,23 @@ class BeritaController extends Controller
             ], 500);
         }
     }
+
+    public function getDetailBerita($id)
+    {
+        try {
+            $berita = Berita::findOrFail($id);
+
+            return response()->json([
+                'data' => $berita,
+                'message' => 'Detail berita fetched successfully',
+            ], 200);
+
+        } catch (\Exception $e) {
+            return response()->json([
+                'message' => 'Berita tidak ditemukan',
+                'error' => $e->getMessage(),
+            ], 404);
+        }
+    }
+
 }
