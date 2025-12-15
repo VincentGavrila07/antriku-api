@@ -347,7 +347,8 @@ class LangEn
                 'TitleRequired' => 'Title is required',
                 'DescriptionRequired' => 'Description is required',
 
-                'save' => 'Save'
+                'save' => 'Save',
+                'NoBerita' => "No Data"
             ],
         ];
     }

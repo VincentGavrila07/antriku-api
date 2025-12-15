@@ -356,7 +356,8 @@ class LangId
                 // Validation
                 'TitleRequired' => 'Judul wajib diisi.',
                 'DescriptionRequired' => 'Deskripsi wajib diisi.',
-                'save' => 'simpan'
+                'save' => 'simpan',
+                'NoBerita' => "Tidak Ada Data"
             ],
 
         ];
