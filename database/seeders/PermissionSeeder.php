@@ -20,10 +20,6 @@ class PermissionSeeder extends Seeder
             ['name' => 'View Permission Management', 'slug' => 'view-permission-management'],
             ['name' => 'View Service Management', 'slug' => 'view-Service-management'],
             ['name' => 'View Berita Management', 'slug' => 'view-berita-management'],
-            ['name' => 'Add User', 'slug' => 'add-user'],
-            ['name' => 'Edit User', 'slug' => 'edit-user'],
-            ['name' => 'Add Role', 'slug' => 'add-role'],
-            ['name' => 'Edit Role', 'slug' => 'edit-role'],
         ];
 
         foreach ($permissions as $permission) {
